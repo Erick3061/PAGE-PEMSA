@@ -1,0 +1,139 @@
+---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import { siteConfig } from "../config/site";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang={siteConfig.lang} class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Protección Electrónica Monterrey S.A de C.V</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta
+			name="description"
+			content="PEMSA (Protección Electrónica Monterrey, S.A. de C.V.) es una empresa mexicana con más de 40 años de experiencia en seguridad electrónica"
+		/>
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://pem-sa.com/" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:title"
+			content="Protección Electrónica Monterrey S.A de C.V "
+		/>
+		<meta
+			property="og:description"
+			content="PEMSA (Protección Electrónica Monterrey, S.A. de C.V.) es una empresa mexicana con más de 40 años de experiencia en seguridad electrónica"
+		/>
+		<meta
+			property="og:image"
+			content="https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNDA2MjZ8MHwxfHNlYXJjaHwxfHxTZWd1cmlkYWR8ZW58MHx8fHwxNzcwMzIzNDI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+		/>
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="pem-sa.com" />
+		<meta property="twitter:url" content="https://pem-sa.com/" />
+		<meta
+			name="twitter:title"
+			content="Protección Electrónica Monterrey S.A de C.V "
+		/>
+		<meta
+			name="twitter:description"
+			content="PEMSA (Protección Electrónica Monterrey, S.A. de C.V.) es una empresa mexicana con más de 40 años de experiencia en seguridad electrónica"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNDA2MjZ8MHwxfHNlYXJjaHwxfHxTZWd1cmlkYWR8ZW58MHx8fHwxNzcwMzIzNDI4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+		/>
+		<script is:inline>
+			const getTheme = () => {
+				if (
+					typeof localStorage !== "undefined" &&
+					localStorage.getItem("theme")
+				) {
+					return localStorage.getItem("theme");
+				}
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					return "dark";
+				}
+				return "light";
+			};
+
+			const theme = getTheme();
+			if (theme === "light") {
+				document.documentElement.setAttribute("data-theme", "light");
+			} else {
+				document.documentElement.setAttribute("data-theme", "dark");
+			}
+			window.localStorage.setItem("theme", theme);
+		</script>
+	</head>
+	<body
+		class="bg-background text-foreground antialiased selection:bg-blue-950 dark:selection:text-blue-200"
+	>
+		<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+			<!-- Background Glow -->
+			<div class="pointer-events-none fixed inset-0 z-0 hidden md:block">
+				<div
+					class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.15)_0%,transparent_50%)]"
+				>
+				</div>
+				<div
+					class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.15)_0%,transparent_50%)]"
+				>
+				</div>
+			</div>
+
+			<Nav />
+			<main id="main-content" class="relative z-10 grow pt-[72px]">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+		<script>
+			const setupObserver = () => {
+				const observerOptions = {
+					root: null,
+					rootMargin: "0px 0px -50px 0px", // Triggers slightly before the element fully enters
+					threshold: 0.1,
+				};
+
+				const observer = new IntersectionObserver(
+					(entries, observer) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("active");
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					observerOptions,
+				);
+
+				const revealElements = document.querySelectorAll(
+					".reveal:not(.active)",
+				);
+				revealElements.forEach((el) => observer.observe(el));
+			};
+
+			// Run on initial load
+			setupObserver();
+			// Also run on Astro view-transitions if enabled
+			document.addEventListener("astro:page-load", setupObserver);
+		</script>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

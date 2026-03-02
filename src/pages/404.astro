@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/widgets/Hero.astro";
+
+const metadata = {
+  title: "404 - Page Not Found",
+  description: "The page you're looking for doesn't exist.",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout {metadata}>
+  <Hero
+    title={`<h1 class="bg-linear-to-r from-red-600 via-blue-900 to-red-600 bg-clip-text text-transparent text-[12rem] font-extrabold tracking-tighter mb-4">404</h1>`}
+    description="Lo sentimos, no podemos encontrar la página que estás buscando. Puede que haya sido movida o eliminada."
+    actions={[
+      {
+        variant: "primary",
+        text: "Ir a Inicio",
+        href: "/",
+        icon: "lucide:home",
+        color: "#993322",
+      },
+      {
+        variant: "secondary",
+        text: "Soporte",
+        href: "/contact",
+        icon: "lucide:phone",
+      },
+    ]}
+  />
+</Layout>

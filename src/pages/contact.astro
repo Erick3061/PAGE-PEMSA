@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Features from "../components/widgets/Features.astro";
+import Content from "../components/widgets/Content.astro";
+import Form from "../components/ui/Form.astro";
+
+const metadata = {
+  title: "Contacto",
+  description:
+    "Gracias por su interés en PEMSA. Si usted tiene alguna sugerencia, inconformidad, pregunta, servicio de un distribuidor autorizado, por favor háganoslo saber.",
+};
+
+const visionText = [
+  "Gracias por su interés en PEMSA. Si usted tiene alguna sugerencia, inconformidad, pregunta, servicio de un distribuidor autorizado, por favor háganoslo saber.",
+];
+---
+
+<Layout metadata={metadata}>
+  <Content tagline="" title="CONTÁCTANOS" description={visionText} />
+  <div
+    class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
+  >
+    <Form />
+  </div>
+  <Features
+    tagline=""
+    title="Estamos aquí para ayudarte"
+    subtitle="Elige el canal de comunicación que prefieras. Respondemos en menos de 24 horas."
+    classes={{ container: "pt-0 md:pt-0" }}
+    features={[
+      {
+        title: "Teléfono",
+        description: "222 141 12 30 / 222 240 63 78",
+        icon: "lucide:phone",
+        iconClass: "bg-green-500/10 text-green-400",
+      },
+      {
+        title: "Correo electrónico",
+        description: "atencionaclientes@pem-sa.com",
+        icon: "lucide:mail",
+        iconClass: "bg-yellow-500/10 text-yellow-400",
+      },
+      {
+        title: "Ubicación",
+        description:
+          "Av. 33 Pte. 307, Chulavista, 72420 Heroica Puebla de Zaragoza, Pue.",
+        icon: "lucide:map-pin",
+        iconClass: "bg-red-500/10 text-red-400",
+      },
+      {
+        title: "Horario de Atención Oficina",
+        description:
+          "Lunes a Viernes: 9:00 - 14:00 15:00 - 17:30 Sábado 9:00 - 14:00",
+        icon: "lucide:user-check",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: "Soporte técnico",
+        description:
+          "Resolvemos cualquier duda o incidente técnico rápidamente.",
+        icon: "lucide:wrench",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: "Consultoría Estratégica",
+        description: "Te aconsejamos que garantices el éxito de tu proyecto.",
+        icon: "lucide:briefcase",
+        iconClass: "bg-pink-500/10 text-pink-400",
+      },
+    ]}
+  />
+  <div
+    class="reveal mx-auto max-w-4xl bg-card border border-border rounded-3xl p-2 shadow-sm mb-12 md:mb-16"
+  >
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.701016472064!2d-98.21066952410398!3d19.0328919821628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0c6509d16f9%3A0x693c24cd89226708!2sProteccion%20Electronica%20Monterrey%20S.A.%20de%20C.V.!5e0!3m2!1ses-419!2smx!4v1772483853352!5m2!1ses-419!2smx"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      class="rounded-3xl"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</Layout>
