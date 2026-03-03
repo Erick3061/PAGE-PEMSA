@@ -6,43 +6,191 @@ import Content2 from "../components/widgets/Content2.astro";
 import webDevImg from "../assets/images/services/web-dev.webp";
 import seoImg from "../assets/images/services/seo.webp";
 import consultingImg from "../assets/images/services/consulting.webp";
+import type { ContentProps } from "../types/types";
 
-const services = [
+const services: ContentProps[] = [
   {
-    title: "VENTA E INSTALACIÓN",
-    description:
+    content: "VENTA E INSTALACIÓN",
+    description: [
       "Venta e instalación profesional de equipos, garantizando seguridad, calidad y funcionamiento óptimo desde el primer día.",
-    icon: "lucide:circle-dollar-sign",
+    ],
+    imageAlt: "lucide:circle-dollar-sign",
+    items: [
+      {
+        title: "Sistemas de alarma contra robo y asalto.",
+        description:
+          "Protege tu hogar o negocio con sistemas de alarma avanzados que detectan intrusiones y alertan a las autoridades en caso de emergencia.",
+        icon: "lucide:shield-alert",
+      },
+      {
+        title: "Sistemas de deteccion de incendio.",
+        description:
+          "La seguridad de tu propiedad con sistemas de detección de incendios que alertan a tiempo para prevenir daños mayores.",
+        icon: "lucide:flame",
+      },
+      {
+        title: "Cercas electrificadas.",
+        description:
+          "La seguridad de tu propiedad con sistemas de cercas electrificadas que previenen accesos no autorizados.",
+        icon: "lucide:fence",
+      },
+      {
+        title: "Sistemas de control de acceso.",
+        description:
+          "La seguridad de tu propiedad con sistemas de control de acceso que permiten el acceso solo a personas autorizadas.",
+        icon: "lucide:door-closed",
+      },
+      {
+        title: "Sistemas de Videovigilancia.",
+        description:
+          "La seguridad de tu propiedad con sistemas de videovigilancia que permiten monitorear en tiempo real tu hogar o negocio.",
+        icon: "lucide:cctv",
+      },
+    ],
   },
   {
-    title: "CENTRAL DE MONITOREO",
-    description:
+    content: "CENTRAL DE MONITOREO",
+    description: [
       "Servicio de monitoreo 24/7, los 365 días del año, para mantener seguro tu hogar o negocio incluso cuando no estás presente.",
-    icon: "lucide:activity",
+    ],
+    imageAlt: "lucide:activity",
+    items: [
+      {
+        title: "Detección de intrusión",
+        description:
+          "En caso de intrusión o intento de intrusión en casa, oficina o negocio, el sistema de seguridad instalado (alarma alámbrica, inalámbrica o cerca electrificada) lo detecta de inmediato.",
+        icon: "lucide:shield-alert",
+      },
+      {
+        title: "Alarma y señal de emergencia",
+        description:
+          "El sistema activa una alarma y envía la señal de emergencia a nuestra Estación Central de Monitoreo.",
+        icon: "lucide:bell-ring",
+      },
+      {
+        title: "Respuesta inmediata",
+        description:
+          "Nuestro personal capacitado responde de forma inmediata y coordina con las autoridades para proteger tu inmueble.",
+        icon: "lucide:phone-call",
+      },
+    ],
   },
   {
-    title: "CÁMARAS DE SEGURIDAD",
-    description:
-      "Venta e instalación de cámaras de seguridad para proteger tu hogar o negocio, con opciones de monitoreo remoto y grabación continua.",
-    icon: "lucide:cctv",
-  },
-  {
-    title: "MANTENIMIENTO",
-    description:
+    content: "MANTENIMIENTO",
+    description: [
       "Acciones destinadas a conservar equipos, instalaciones o sistemas en óptimas condiciones, asegurando su funcionamiento continuo y eficiente.",
-    icon: "lucide:tool-case",
+    ],
+    imageAlt: "lucide:tool-case",
+    items: [
+      {
+        title: "Mantenimiento preventivo",
+        description:
+          "Ejecución de tareas de revisión, reparación y restitución para mantener el buen funcionamiento del sistema.",
+      },
+      {
+        title: "Optimización de circuitos",
+        description:
+          "Prevención de consumo extra de energía o fugas gracias a un circuito eficiente.",
+      },
+      {
+        title: "Control de funcionamiento de cercas eléctricas",
+        description:
+          "Control detallado del funcionamiento de la cerca eléctrica.",
+      },
+      {
+        title: "Mantenimiento de sistemas de alarma",
+        description:
+          "Verificaciones regulares para mantener el sistema en buen estado.",
+      },
+      {
+        title: "Reducción de costos",
+        description:
+          "Reducción de costos en reparaciones y mantenimientos complejos.",
+      },
+      {
+        title: "Reparación de dispositivos del cerco eléctrico",
+        description:
+          "Reparación de dispositivos del cerco eléctrico que sufren desgaste por uso normal.",
+      },
+      {
+        title: "Sustitución de componentes",
+        description:
+          "Sustitución de componentes cada cierto tiempo para garantizar seguridad continua.",
+      },
+      {
+        title: "Mantenimiento preventivo",
+        description:
+          "Evita gastos mayores en el futuro al atender oportunamente las fallas.",
+      },
+    ],
   },
   {
-    title: "INTEGRACIÓN DE SERVICIOS",
-    description:
+    content: "INTEGRACIÓN DE SERVICIOS",
+    description: [
       "Unión de distintos sistemas o procesos para que trabajen coordinados y de forma eficiente.",
-    icon: "lucide:hand-platter",
+    ],
+    imageAlt: "lucide:hand-platter",
+    items: [
+      {
+        title: "Sistemas de seguridad",
+        description:
+          "Integración de sistemas de seguridad para que trabajen coordinados y de forma eficiente.",
+      },
+      {
+        title: "Sistemas de monitoreo",
+        description:
+          "Integración de sistemas de monitoreo para que trabajen coordinados y de forma eficiente.",
+      },
+      {
+        title: "Control de acceso",
+        description:
+          "Integración de sistemas de control de acceso para que trabajen coordinados y de forma eficiente.",
+      },
+      {
+        title: "Videovigilancia",
+        description:
+          "Integración de sistemas de videovigilancia para que trabajen coordinados y de forma eficiente.",
+      },
+      {
+        title: "Telecomunicaciones",
+        description:
+          "Integración de sistemas de telecomunicaciones para que trabajen coordinados y de forma eficiente.",
+      },
+    ],
   },
   {
-    title: "PROYECTOS EMPRESARIALES",
-    description:
+    content: "PROYECTOS EMPRESARIALES",
+    description: [
       "Desarrollo e implementación de soluciones tecnológicas personalizadas para empresas, optimizando procesos y mejorando la eficiencia operativa.",
-    icon: "lucide:trending-up-down",
+    ],
+    imageAlt: "lucide:trending-up-down",
+    items: [
+      {
+        title: "Desarrollo de software a medida",
+        description:
+          "Creación de aplicaciones personalizadas para satisfacer las necesidades específicas de tu empresa.",
+      },
+      {
+        title: "Automatización de procesos",
+        description:
+          "Automatización de tareas repetitivas para aumentar la eficiencia y reducir errores.",
+      },
+      {
+        title: "Consultoría tecnológica",
+        description:
+          "Asesoramiento experto para seleccionar e implementar las mejores soluciones tecnológicas para tu negocio.",
+      },
+      {
+        title: "Implementaciones",
+        description:
+          "Desarrollo de soluciones tecnológicas personalizadas adaptadas a las necesidades específicas de cada empresa.",
+      },
+      {
+        title: "Integración",
+        description:
+          "Integración de seguridad electrónica con software centralizado para un control total.",
+      },
+    ],
   },
 ];
 const metadata = {
@@ -60,106 +208,28 @@ const metadata = {
       "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
     ]}
   />
-  <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
-
-  <Content
-    tagline=""
-    title="VENTA E INSTALACIÓN"
-    description={[
-      "Venta e instalación profesional de equipos de seguridad, garantizando protección, calidad y funcionamiento óptimo desde el primer día. Ofrecemos asesoría personalizada, instalación confiable y soporte técnico continuo para que tu hogar o negocio estén siempre seguros.",
-    ]}
-    classes={{ container: "pb-0 md:pb-0" }}
+  <ServiceList
+    services={services.map((a) => ({
+      title: a.content,
+      icon: a.imageAlt,
+    }))}
+    classes={{ container: "pt-0 md:pt-0 mb-16" }}
   />
-  <Content2
-    items={[
-      {
-        title: "Sistemas de alarma contra robo y asalto.",
-        description:
-          "Protege tu hogar o negocio con sistemas de alarma avanzados que detectan intrusiones y alertan a las autoridades en caso de emergencia.",
-      },
-      {
-        title: "Sistemas de deteccion de incendio.",
-        description:
-          "La seguridad de tu propiedad con sistemas de detección de incendios que alertan a tiempo para prevenir daños mayores.",
-      },
-      {
-        title: "Cercas electrificadas.",
-        description:
-          "La seguridad de tu propiedad con sistemas de cercas electrificadas que previenen accesos no autorizados.",
-      },
-      {
-        title: "Sistemas de control de acceso.",
-        description:
-          "La seguridad de tu propiedad con sistemas de control de acceso que permiten el acceso solo a personas autorizadas.",
-      },
-      {
-        title: "Sistemas de Videovigilancia.",
-        description:
-          "La seguridad de tu propiedad con sistemas de videovigilancia que permiten monitorear en tiempo real tu hogar o negocio.",
-      },
-    ]}
-    image={webDevImg}
-    imageAlt="Modern Web Development"
-    classes={{ container: "pt-0 md:pt-0" }}
-  >
-    <!-- <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Modern Web Development
-      </h3>
-      We specialize in building fast, secure, and scalable websites using the latest
-      technologies. We transform your vision into an impactful digital experience.
-    </Fragment> -->
-  </Content2>
-
-  <Content2
-    isReversed={true}
-    items={[
-      {
-        title: "SEO Audit",
-        description:
-          "We deeply analyze your website to identify technical and content improvement opportunities.",
-      },
-      {
-        title: "Content Strategy",
-        description:
-          "We create relevant content plans that attract and retain your target audience.",
-      },
-    ]}
-    image={seoImg}
-    imageAlt="SEO Strategies"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        SEO Optimization
-      </h3>
-      We help your business get found by the right people. Our organic positioning
-      strategies are designed to improve your organic visibility.
-    </Fragment>
-  </Content2>
-
-  <Content2
-    items={[
-      {
-        title: "Digital Transformation",
-        description:
-          "We guide you in adopting new technologies to optimize your business processes.",
-      },
-      {
-        title: "Software Architecture",
-        description:
-          "We design robust and scalable systems prepared for future growth.",
-      },
-    ]}
-    image={consultingImg}
-    imageAlt="Technology Consulting"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Technology Consulting
-      </h3>
-      We accompany you in critical decision-making. We evaluate your current infrastructure
-      and design personalized roadmaps to take your company to the next technological
-      level.
-    </Fragment>
-  </Content2>
+  {
+    services.map((service, idx) => (
+      <Content2
+        isReversed={idx % 2 === 1}
+        items={service.items}
+        image={seoImg}
+        imageAlt={service.content}
+      >
+        <Fragment>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+            {service.content}:
+          </h3>
+          <p>{service.description}</p>
+        </Fragment>
+      </Content2>
+    ))
+  }
 </Layout>

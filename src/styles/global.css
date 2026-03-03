@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
   --color-background: var(--background);
@@ -18,6 +20,7 @@
   --muted: #d6d6d6;
   --muted-foreground: #52525b;
   --card: #ffffff;
+  --btncard:#9f0712 ;
 }
 
 :root[data-theme="dark"] {
@@ -28,6 +31,7 @@
   --muted: #171717;
   --muted-foreground: #a1a1aa;
   --card: #52525b;
+  --btncard:oklch(70.4% 0.191 22.216);
 }
 
 /* Base styles using variables */
