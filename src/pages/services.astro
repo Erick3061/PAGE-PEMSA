@@ -9,69 +9,106 @@ import consultingImg from "../assets/images/services/consulting.webp";
 
 const services = [
   {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
+    title: "VENTA E INSTALACIÓN",
+    description:
+      "Venta e instalación profesional de equipos, garantizando seguridad, calidad y funcionamiento óptimo desde el primer día.",
+    icon: "lucide:circle-dollar-sign",
   },
   {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
+    title: "CENTRAL DE MONITOREO",
+    description:
+      "Servicio de monitoreo 24/7, los 365 días del año, para mantener seguro tu hogar o negocio incluso cuando no estás presente.",
+    icon: "lucide:activity",
   },
   {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
+    title: "CÁMARAS DE SEGURIDAD",
+    description:
+      "Venta e instalación de cámaras de seguridad para proteger tu hogar o negocio, con opciones de monitoreo remoto y grabación continua.",
+    icon: "lucide:cctv",
+  },
+  {
+    title: "MANTENIMIENTO",
+    description:
+      "Acciones destinadas a conservar equipos, instalaciones o sistemas en óptimas condiciones, asegurando su funcionamiento continuo y eficiente.",
+    icon: "lucide:tool-case",
+  },
+  {
+    title: "INTEGRACIÓN DE SERVICIOS",
+    description:
+      "Unión de distintos sistemas o procesos para que trabajen coordinados y de forma eficiente.",
+    icon: "lucide:hand-platter",
+  },
+  {
+    title: "PROYECTOS EMPRESARIALES",
+    description:
+      "Desarrollo e implementación de soluciones tecnológicas personalizadas para empresas, optimizando procesos y mejorando la eficiencia operativa.",
+    icon: "lucide:trending-up-down",
   },
 ];
 const metadata = {
-  title: "Services",
+  title: "Servicios",
   description:
-    "Discover our web development, SEO optimization, and technology consulting services.",
+    "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
 };
 ---
 
 <Layout {metadata}>
   <Content
-    tagline="Services"
-    title="Our Services"
+    tagline=""
+    title="Nuestros servicios"
     description={[
-      "Comprehensive solutions designed to maximize the potential of your digital presence.",
+      "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
     ]}
   />
   <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
+
   <Content
-    tagline="Web Development"
-    title="Modern Web Development"
+    tagline=""
+    title="VENTA E INSTALACIÓN"
     description={[
-      "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
+      "Venta e instalación profesional de equipos de seguridad, garantizando protección, calidad y funcionamiento óptimo desde el primer día. Ofrecemos asesoría personalizada, instalación confiable y soporte técnico continuo para que tu hogar o negocio estén siempre seguros.",
     ]}
     classes={{ container: "pb-0 md:pb-0" }}
   />
   <Content2
     items={[
       {
-        title: "Responsive Design",
+        title: "Sistemas de alarma contra robo y asalto.",
         description:
-          "Your site will look perfect on any device, from mobiles to desktop screens.",
+          "Protege tu hogar o negocio con sistemas de alarma avanzados que detectan intrusiones y alertan a las autoridades en caso de emergencia.",
       },
       {
-        title: "Optimized Performance",
+        title: "Sistemas de deteccion de incendio.",
         description:
-          "Fast loading to improve user experience and SEO positioning.",
+          "La seguridad de tu propiedad con sistemas de detección de incendios que alertan a tiempo para prevenir daños mayores.",
+      },
+      {
+        title: "Cercas electrificadas.",
+        description:
+          "La seguridad de tu propiedad con sistemas de cercas electrificadas que previenen accesos no autorizados.",
+      },
+      {
+        title: "Sistemas de control de acceso.",
+        description:
+          "La seguridad de tu propiedad con sistemas de control de acceso que permiten el acceso solo a personas autorizadas.",
+      },
+      {
+        title: "Sistemas de Videovigilancia.",
+        description:
+          "La seguridad de tu propiedad con sistemas de videovigilancia que permiten monitorear en tiempo real tu hogar o negocio.",
       },
     ]}
     image={webDevImg}
     imageAlt="Modern Web Development"
     classes={{ container: "pt-0 md:pt-0" }}
   >
-    <Fragment>
+    <!-- <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
         Modern Web Development
       </h3>
       We specialize in building fast, secure, and scalable websites using the latest
       technologies. We transform your vision into an impactful digital experience.
-    </Fragment>
+    </Fragment> -->
   </Content2>
 
   <Content2

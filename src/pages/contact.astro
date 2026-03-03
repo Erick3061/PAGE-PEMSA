@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Features from "../components/widgets/Features.astro";
 import Content from "../components/widgets/Content.astro";
 import Form from "../components/ui/Form.astro";
+import { Icon } from "astro-icon/components";
+import Button from "../components/ui/Button.astro";
 
 const metadata = {
   title: "Contacto",
@@ -13,62 +15,92 @@ const metadata = {
 const visionText = [
   "Gracias por su interés en PEMSA. Si usted tiene alguna sugerencia, inconformidad, pregunta, servicio de un distribuidor autorizado, por favor háganoslo saber.",
 ];
+
+const features = [
+  {
+    title: "Instalaciones",
+    description:
+      "Av. 33 Pte. 307, Chulavista, 72420 Heroica Puebla de Zaragoza, Pue.",
+    icon: "lucide:map-pin",
+    iconClass: "bg-red-500/10 text-red-400",
+  },
+  {
+    title: "Teléfono",
+    description: "222 141 12 30 / 222 240 63 78",
+    icon: "lucide:phone",
+    iconClass: "bg-green-500/10 text-green-400",
+  },
+  {
+    title: "Correo",
+    description: "atencionaclientes@pem-sa.com",
+    icon: "lucide:mail",
+    iconClass: "bg-yellow-500/10 text-yellow-400",
+  },
+  {
+    title: "Horario",
+    description:
+      "Lunes a Viernes: 9:00 - 14:00 15:00 - 17:30 Sábado 9:00 - 14:00",
+    icon: "lucide:clock-5",
+    iconClass: "bg-blue-500/10 text-blue-400",
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <Content tagline="" title="CONTÁCTANOS" description={visionText} />
-  <div
-    class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
+  <section
+    class="reveal max-w-7xl mx-auto lg:flex items-center flex-col lg:flex-row gap-5 px-2 py-4 sm:px-3 lg:px-4 mb-10"
   >
-    <Form />
-  </div>
-  <Features
+    <div
+      class="flex-1 mx-auto max-w-2xl bg-card border border-border rounded-3xl p-8 shadow-sm m-2"
+    >
+      <Form />
+    </div>
+
+    <div class="flex-1 max-w-2xl mx-auto p-5">
+      <h2 class="text-2xl font-bold text-foreground mb-3">
+        Estamos aquí para ayudarte
+      </h2>
+      <p class="text-muted-foreground text-mb mb-5">
+        Elige el canal de comunicación que prefieras. Respondemos en menos de 24
+        horas.
+      </p>
+      <div class="mb-10">
+        {
+          features.map((feature) => (
+            <div class="flex gap-3 items-center mt-5">
+              {feature.icon && (
+                <div
+                  class={`w-12 h-12 rounded-full flex items-center justify-center ${feature.iconClass ? feature.iconClass : "bg-primary/10 text-primary"}`}
+                >
+                  <Icon name={feature.icon} class="w-6 h-6" />
+                </div>
+              )}
+              <div class="flex-1 gap-2 flex">
+                <h3 class="text-md font-bold text-foreground">
+                  {feature.title}:{" "}
+                  <span class="text-md font-normal text-muted-foreground">
+                    {feature.description}
+                  </span>
+                </h3>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <a class="mt-10 text-lg font-bold dark:text-red-400" href="">
+        Aviso de privacidad
+      </a>
+      <!-- <Button class="right-0" variant="tertiary">Aviso de privacidad</Button> -->
+    </div>
+  </section>
+  <!-- <Features
     tagline=""
     title="Estamos aquí para ayudarte"
     subtitle="Elige el canal de comunicación que prefieras. Respondemos en menos de 24 horas."
     classes={{ container: "pt-0 md:pt-0" }}
-    features={[
-      {
-        title: "Teléfono",
-        description: "222 141 12 30 / 222 240 63 78",
-        icon: "lucide:phone",
-        iconClass: "bg-green-500/10 text-green-400",
-      },
-      {
-        title: "Correo electrónico",
-        description: "atencionaclientes@pem-sa.com",
-        icon: "lucide:mail",
-        iconClass: "bg-yellow-500/10 text-yellow-400",
-      },
-      {
-        title: "Ubicación",
-        description:
-          "Av. 33 Pte. 307, Chulavista, 72420 Heroica Puebla de Zaragoza, Pue.",
-        icon: "lucide:map-pin",
-        iconClass: "bg-red-500/10 text-red-400",
-      },
-      {
-        title: "Horario de Atención Oficina",
-        description:
-          "Lunes a Viernes: 9:00 - 14:00 15:00 - 17:30 Sábado 9:00 - 14:00",
-        icon: "lucide:user-check",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: "Soporte técnico",
-        description:
-          "Resolvemos cualquier duda o incidente técnico rápidamente.",
-        icon: "lucide:wrench",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Consultoría Estratégica",
-        description: "Te aconsejamos que garantices el éxito de tu proyecto.",
-        icon: "lucide:briefcase",
-        iconClass: "bg-pink-500/10 text-pink-400",
-      },
-    ]}
-  />
+    features={features}
+  /> -->
   <div
     class="reveal mx-auto max-w-4xl bg-card border border-border rounded-3xl p-2 shadow-sm mb-12 md:mb-16"
   >
@@ -82,4 +114,9 @@ const visionText = [
       class="rounded-3xl"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+  <!-- <div
+    class="reveal flex-1 mx-auto max-w-2xl bg-card border border-border rounded-3xl p-8 shadow-sm m-2"
+  >
+    <Form />
+  </div> -->
 </Layout>
