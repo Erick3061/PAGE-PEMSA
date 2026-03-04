@@ -21,5 +21,6 @@ export const siteConfig = {
     { text: "Servicios", href: "/services" },
     { text: "Blog", href: "/blog" },
     { text: "Contacto", href: "/contact" },
+    { text: "legal", href: "/legal" },
   ],
 };

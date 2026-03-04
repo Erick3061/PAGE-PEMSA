@@ -1,3 +1,5 @@
+import type { JSX } from "astro/jsx-runtime";
+
 export interface CallToAction {
   text: string;
   href: string;
@@ -11,6 +13,7 @@ export interface Feature {
   description: string;
   icon?: string;
   iconClass?: string;
+  render?: string; // For custom elements, like icons or images
 }
 
 export type Value = Feature;
@@ -70,5 +73,6 @@ export interface ServiceListProps extends HeadlineProps {
 
 export interface ValuesProps extends HeadlineProps {
   items?: Value[];
+  descriptionItemClass?: string;
   columns?: 1 | 2 | 3 | 4;
 }

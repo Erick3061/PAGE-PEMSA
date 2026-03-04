@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 
 @theme {
@@ -31,7 +31,11 @@
   --muted: #171717;
   --muted-foreground: #a1a1aa;
   --card: #52525b;
-  --btncard:oklch(70.4% 0.191 22.216);
+  --btncard:oklch(62.803% 0.25754 29.002);
+
+  .logos {
+    filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
+  }
 }
 
 /* Base styles using variables */

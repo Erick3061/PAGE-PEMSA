@@ -3,14 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
 import Content from "../components/widgets/Content.astro";
 import Content2 from "../components/widgets/Content2.astro";
-import webDevImg from "../assets/images/services/web-dev.webp";
-import seoImg from "../assets/images/services/seo.webp";
-import consultingImg from "../assets/images/services/consulting.webp";
+import is from "../assets/images/services/is.webp";
+import man from "../assets/images/services/man.webp";
+import vya from "../assets/images/services/vya.webp";
+import pe from "../assets/images/services/pe.webp";
+import monitoreo from "../assets/images/services/monitoreo.webp";
 import type { ContentProps } from "../types/types";
 
 const services: ContentProps[] = [
   {
     content: "VENTA E INSTALACIÓN",
+    image: vya,
     description: [
       "Venta e instalación profesional de equipos, garantizando seguridad, calidad y funcionamiento óptimo desde el primer día.",
     ],
@@ -50,6 +53,7 @@ const services: ContentProps[] = [
   },
   {
     content: "CENTRAL DE MONITOREO",
+    image: monitoreo,
     description: [
       "Servicio de monitoreo 24/7, los 365 días del año, para mantener seguro tu hogar o negocio incluso cuando no estás presente.",
     ],
@@ -77,6 +81,7 @@ const services: ContentProps[] = [
   },
   {
     content: "MANTENIMIENTO",
+    image: man,
     description: [
       "Acciones destinadas a conservar equipos, instalaciones o sistemas en óptimas condiciones, asegurando su funcionamiento continuo y eficiente.",
     ],
@@ -126,6 +131,7 @@ const services: ContentProps[] = [
   },
   {
     content: "INTEGRACIÓN DE SERVICIOS",
+    image: is,
     description: [
       "Unión de distintos sistemas o procesos para que trabajen coordinados y de forma eficiente.",
     ],
@@ -160,6 +166,7 @@ const services: ContentProps[] = [
   },
   {
     content: "PROYECTOS EMPRESARIALES",
+    image: pe,
     description: [
       "Desarrollo e implementación de soluciones tecnológicas personalizadas para empresas, optimizando procesos y mejorando la eficiencia operativa.",
     ],
@@ -220,7 +227,7 @@ const metadata = {
       <Content2
         isReversed={idx % 2 === 1}
         items={service.items}
-        image={seoImg}
+        image={service.image}
         imageAlt={service.content}
       >
         <Fragment>

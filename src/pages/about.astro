@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getImage } from "astro:assets";
+import Content2 from "../components/widgets/Content2.astro";
+import Values from "../components/widgets/Values.astro";
+import aboutImage from "../assets/images/about-office.webp";
+
+const metadata = {
+  title: "About us",
+  description:
+    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+};
+
+const values = [
+  {
+    title: "MISIÓN",
+    description:
+      "Brindar la tranquilidad y satisfacción de nuestros clientes a través de soluciones de seguridad electrónica con tecnología de vanguardia, mediante procesos eficientes y personal comprometido y competente, para lograr así un crecimiento sostenido y rentable.",
+  },
+  {
+    title: "VISIÓN",
+    description:
+      "Ser una empresa líder de seguridad electrónica y tecnología que ofrezca a través de la integración de capital humano cualificado y un portafolio comercial diverso y rentable, servicios personalizados y diferenciados que nos permitan ser referente en sector de seguridad a nivel nacional, con el objetivo de garantizar la tranquilidad y satisfacción de nuestros clientes.",
+  },
+  {
+    title: "VALORES",
+    render:
+      "<ul class='list-disc list-inside mb-8 text-sm text-muted-foreground'><li>Servicio</li><li>Calidad</li><li>Liderazgo</li><li>Integridad</li><li>Respeto</li></ul>",
+  },
+];
+
+const optimizedImage = await getImage({
+  src: aboutImage,
+  format: "webp",
+});
+---
+
+<Layout {metadata}>
+  <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
+  <Content2
+    render="html"
+    image={aboutImage}
+    imageAlt="about-office"
+    actions={[
+      {
+        text: "Contact Us",
+        href: "/contact",
+        variant: "primary",
+        icon: "lucide:mail",
+      },
+      {
+        text: "View Details",
+        href: "#",
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+      },
+    ]}
+    ,
+  >
+    <span class="text-md text-muted-foreground tracking-wide text-justify">
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-5">
+        ¿QUIENES SOMOS?
+      </h3>
+      <p class="mb-2">
+        PROTECCION ELECTRONICA MONTERREY, S.A. DE C.V. es una empresa Mexicana
+        fundada en 1985, y diseñada para la asesoría, venta, instalación
+        mantenimiento y monitoreo de SISTEMAS DE SEGURIDAD ELECTRONICA.
+      </p>
+      <p class="mb-2">
+        El compromiso de Protección Electrónica Monterrey es suministrar
+        soluciones en sistemas de seguridad electrónica de la mas alta calidad y
+        eficiencia, generando servicios de valor agregado, que permitan
+        satisfacer y superar las expectativas de los clientes, apegados a
+        principios éticos, salvaguardando la confidencialidad y privacidad de
+        los datos, cuidando la salud, la seguridad del personal y protegiendo el
+        medio ambiente, proporcionando capacitación continua a todo su personal
+        en temas de prevención de accidentes y enfermedades, atención médica,
+        mediante el cumplimiento de los requerimientos legales y regulatorios
+        aplicables, bajo un estado de mejora continua y un pensamiento basado en
+        riesgos que nos asegure el logro constante de nuestros objetivos y
+        servicios ofrecidos.
+      </p>
+    </span>
+  </Content2>
+  <Values
+    items={values}
+    columns={3}
+    title="¿Qué nos define?"
+    subtitle="Principios que guían nuestro trabajo diario"
+    descriptionItemClass="text-justify"
+  />
+</Layout>
