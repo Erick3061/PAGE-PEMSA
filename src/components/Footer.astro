@@ -12,7 +12,12 @@ import { Image } from "astro:assets";
                     href="/"
                     class="flex items-center min-w-full flex-col gap-2 md:flex-row"
                 >
-                    <Image src={logo} alt={"LOGO"} class="logos w-80 md:w-sm" />
+                    <Image
+                        src={logo}
+                        alt={"LOGO"}
+                        class="logos w-80 md:w-sm"
+                        quality={"low"}
+                    />
                     <span
                         class="text-heading self-center text-2xl font-semibold sm:whitespace-nowrap flex-1"
                         >{siteConfig.nameLarge}</span

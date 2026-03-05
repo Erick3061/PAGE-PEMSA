@@ -22,6 +22,8 @@ export interface Service {
   title: string;
   description: string;
   icon: string;
+  upperIcon?: boolean;
+  action?: CallToAction;
 }
 
 export interface NavLink {

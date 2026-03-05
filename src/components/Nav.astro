@@ -16,7 +16,12 @@ import { Image } from "astro:assets";
                 href="/"
                 class="flex items-center gap-2 text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
             >
-                <Image src={logo} alt={"LOGO"} class="logos w-10 h-10" />
+                <Image
+                    src={logo}
+                    alt={"LOGO"}
+                    class="logos w-10 h-10"
+                    quality={"low"}
+                />
                 {siteConfig.name}
             </a>
         </div>

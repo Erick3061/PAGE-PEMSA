@@ -1,5 +1,189 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import video from "../assets/video.mp4";
+import Button from "../components/ui/Button.astro";
+import { siteConfig } from "../config/site";
+import Features from "../components/widgets/Features.astro";
+import Content2 from "../components/widgets/Content2.astro";
+import { custom, undefined } from "astro:schema";
+import Content from "../components/widgets/Content.astro";
+import ServiceList from "../components/widgets/ServiceList.astro";
+const metadata = {
+    title: `${siteConfig.name} — The next step for your project`,
+    description: siteConfig.description,
+    ignoreTitleTemplate: true,
+};
 ---
 
-<Layout />
+<Layout metadata={metadata}>
+    <div class="reveal relative h-screen w-full overflow-hidden">
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            class="absolute top-0 left-0 h-full w-full object-cover"
+        >
+            <source src={video} type="video/mp4" />
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <div class="absolute top-0 left-0 h-full w-full bg-black opacity-20">
+        </div>
+
+        <div
+            class="relative z-10 flex h-full md:w-1/2 ml-auto bg-card/70 items-center justify-center"
+        >
+            <div class="flex gap-4 flex-col text-center p-4 md:p-8">
+                <h1 class="text-4xl md:text-4xl font-bold mb-4">
+                    EVOLUCIONA LA SEGURIDAD DE TU HOGAR Y NEGOCIO AL SIGUIENTE
+                    NIVEL
+                </h1>
+                <p class="font-semibold text-lg md:text-2xl mb-6">
+                    MÁS DE 40 AÑOS DE EXPERIENCIA EN EL MERCADO NOS RESPALDAN
+                </p>
+                <p class="font-semibold text-xl mb-6">
+                    Servicio a nivel nacional
+                </p>
+                <Button type="submit" href="/contact" class="max-w-max mx-auto"
+                    >CONTÁCTANOS</Button
+                >
+                <a class="max-w-max mt-20 ml-auto font-bold" href={"/legal"}
+                    >Aviso de privacidad</a
+                >
+            </div>
+        </div>
+    </div>
+    <ServiceList
+        classes={{
+            container: "h-screen w-full flex flex-col justify-center mb-5",
+            custom: "grid grid-cols-1 md:grid-cols-2 gap-8 mt-10",
+        }}
+        title={siteConfig.nameLarge}
+        tagline="¿Quiénes Somos?"
+        services={[
+            {
+                title: "COMPROMISO",
+                description:
+                    "Ponemos toda nuestra experiencia y compromiso al servicio de su tranquilidad, asegurando que cada sistema contratado supere sus expectativas.",
+                icon: "lucide:handshake",
+                action: {
+                    text: "Leer mas ...",
+                    href: "/about",
+                },
+            },
+            {
+                title: "Más directa y confiable",
+                description:
+                    "Garantizamos que cada sistema, equipo y material utilizado cumple con estrictos índices de calidad.",
+                icon: "lucide:book-check",
+                action: {
+                    text: "Leer mas ...",
+                    href: "/about",
+                },
+            },
+        ]}
+    />
+    <Features
+        classes={{
+            container: "h-screen w-full flex flex-col justify-center mb-5",
+        }}
+        tagline="¿Qué Ofrecemos?"
+        title="INTEGRACIÓN DE SISTEMAS DE SEGURIDAD ELECTRÓNICA"
+        columns={5}
+        features={[
+            {
+                title: "Intrusión - asalto",
+                icon: "lucide:shield-alert",
+                iconClass: "bg-blue-500/10 text-blue-400",
+            },
+            {
+                title: "Control de acceso",
+                icon: "lucide:door-open",
+                iconClass: "bg-purple-500/10 text-purple-400",
+            },
+            {
+                title: "Incendio",
+                icon: "lucide:flame",
+                iconClass: "bg-purple-500/10 text-purple-400",
+            },
+            {
+                title: "Videovigilancia",
+                icon: "lucide:cctv",
+                iconClass: "bg-pink-500/10 text-pink-400",
+            },
+            {
+                title: "Cercas electrificadas",
+                icon: "lucide:fence",
+                iconClass: "bg-pink-500/10 text-pink-400",
+            },
+        ]}
+    />
+    <Content2
+        items={[
+            {
+                title: "Responsive Design",
+                description:
+                    "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
+                icon: "lucide:scan-search",
+                iconClass: "bg-blue-500/10 text-blue-400",
+            },
+            {
+                title: "High Performance",
+                description: "Lightweight structure for fast load times.",
+                icon: "lucide:zap",
+                iconClass: "bg-purple-500/10 text-purple-400",
+            },
+            {
+                title: "Tailwind v4",
+                description:
+                    "Integrated configuration with the latest version of Tailwind CSS.",
+                icon: "lucide:palette",
+                iconClass: "bg-pink-500/10 text-pink-400",
+            },
+        ]}
+        imageAlt="Development"
+    >
+        <Fragment>
+            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+                Development
+            </h3>
+            We provide a solid foundation to start your projects with best practices.
+        </Fragment>
+    </Content2>
+    <Content2
+        items={[
+            {
+                title: "Open Source",
+                description:
+                    "Developed under the MIT license, free for personal and commercial use.",
+                icon: "lucide:github",
+                iconClass: "bg-indigo-500/10 text-indigo-400",
+            },
+            {
+                title: "Community Driven",
+                description:
+                    "Built with the feedback and contributions of the developer community.",
+                icon: "lucide:users",
+                iconClass: "bg-orange-500/10 text-orange-400",
+            },
+            {
+                title: "Regular Updates",
+                description:
+                    "Continuously improved with the latest technologies and best practices.",
+                icon: "lucide:refresh-cw",
+                iconClass: "bg-teal-500/10 text-teal-400",
+            },
+        ]}
+        imageAlt="Community and Open Source"
+        isReversed={true}
+    >
+        <Fragment>
+            <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+                Open Source & Community
+            </h3>
+            Join the revolution of modern web development. This project is open for
+            everyone to use, learn from, and contribute to.
+        </Fragment>
+    </Content2>
+</Layout>
