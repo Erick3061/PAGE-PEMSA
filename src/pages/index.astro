@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import video from "../assets/video.mp4";
+import banner from "../assets/banner.webp";
 import Button from "../components/ui/Button.astro";
 import { siteConfig } from "../config/site";
 import Features from "../components/widgets/Features.astro";
 import Content2 from "../components/widgets/Content2.astro";
-import { custom, undefined } from "astro:schema";
-import Content from "../components/widgets/Content.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
+import { Image } from "astro:assets";
 const metadata = {
     title: `${siteConfig.name} — The next step for your project`,
     description: siteConfig.description,
@@ -17,7 +16,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
     <div class="reveal relative h-screen w-full overflow-hidden">
-        <video
+        <!-- <video
             autoplay
             loop
             muted
@@ -26,7 +25,12 @@ const metadata = {
         >
             <source src={video} type="video/mp4" />
             Tu navegador no soporta la etiqueta de video.
-        </video>
+        </video> -->
+        <Image
+            class="absolute top-0 left-0 h-full w-full object-cover"
+            src={banner}
+            alt={"banner"}
+        />
 
         <div class="absolute top-0 left-0 h-full w-full bg-black opacity-20">
         </div>
