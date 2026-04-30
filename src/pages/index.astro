@@ -13,7 +13,6 @@ import Features from "../components/widgets/Features.astro";
 import Content2 from "../components/widgets/Content2.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import Card from "../components/ui/Card.astro";
 import Headline from "../components/ui/Headline.astro";
 const metadata = {
@@ -51,35 +50,35 @@ const Checks: {
         description:
             "Contamos con más 35 años en el mercado de la seguridad electrónica, con personal certificado en las diferentes marcas de equipo que ofrecemos",
         icon: experiencia,
-        class: "p-5 lg:col-start-1 lg:row-start-1 md:col-start-1 md:row-start-1",
+        class: "lg:col-start-1 lg:row-start-1 md:col-start-1 md:row-start-1",
     },
     {
         title: "CONFIANZA",
         description:
             "Todos los servicios son atendidos por personal propio de la empresa",
         icon: confianza,
-        class: "p-5 lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1",
+        class: "lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1",
     },
     {
         title: "COBERTURA",
         description:
             "Servicio a nivel nacional, brindamos atención en donde nos necesitan nuestros clientes",
         icon: cobertura,
-        class: "p-5 lg:col-start-2 lg:row-start-2 md:col-start-1 md:row-start-2",
+        class: "lg:col-start-2 lg:row-start-2 md:col-start-1 md:row-start-2",
     },
     {
         title: "CALIDAD",
         description:
             "Estamos comprometidos en brindar servicios de calidad para satisfacer los requerimientos de nuestros clientes",
         icon: calidad,
-        class: "p-5 lg:col-start-1 lg:row-start-3 md:col-start-2 md:row-start-2",
+        class: "lg:col-start-1 lg:row-start-3 md:col-start-2 md:row-start-2",
     },
     {
         title: "FLEXIBILIDAD",
         description:
             "Trabajamos de la mano con nuestros clientes, ofreciendo soluciones que se adaptan a sus necesidades",
         icon: flexibilidad,
-        class: "p-5 lg:col-start-3 lg:row-start-3 md:col-start-1 md:row-start-3",
+        class: "lg:col-start-3 lg:row-start-3 md:col-start-1 md:row-start-3",
     },
 ];
 ---
@@ -347,7 +346,7 @@ const Checks: {
         </Fragment>
     </Content2>
 
-    <div class={`mt-16 p-5 flex flex-col md:gap-16 bg-primary/5`}>
+    <div class={`reveal mt-16 p-5 flex flex-col md:gap-16 bg-primary/5`}>
         <Headline
             title="¿Por qué elegirnos?"
             classes={{
@@ -378,7 +377,7 @@ const Checks: {
             }
         </div>
     </div>
-    <div class={`mt-16 p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
+    <div class={`reveal mt-16 p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
         <Headline
             title="CLIENTES"
             subtitle="Algunos de nuestros clientes satisfechos"
@@ -415,7 +414,7 @@ const Checks: {
             </div>
         </div>
     </div>
-    <div class={`p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
+    <div class={`reveal p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
         <Headline
             title="MARCAS"
             subtitle="Marcas que confían en nuestro trabajo"
