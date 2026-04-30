@@ -39,6 +39,49 @@ const Brands: { name: string }[] = [
     { name: "Samsung" },
     { name: "Sony" },
 ];
+
+const Checks: {
+    title: string;
+    description: string;
+    icon: ImageMetadata;
+    class: string;
+}[] = [
+    {
+        title: "EXPERIENCIA",
+        description:
+            "Contamos con más 35 años en el mercado de la seguridad electrónica, con personal certificado en las diferentes marcas de equipo que ofrecemos",
+        icon: experiencia,
+        class: "p-5 lg:col-start-1 lg:row-start-1 md:col-start-1 md:row-start-1",
+    },
+    {
+        title: "CONFIANZA",
+        description:
+            "Todos los servicios son atendidos por personal propio de la empresa",
+        icon: confianza,
+        class: "p-5 lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1",
+    },
+    {
+        title: "COBERTURA",
+        description:
+            "Servicio a nivel nacional, brindamos atención en donde nos necesitan nuestros clientes",
+        icon: cobertura,
+        class: "p-5 lg:col-start-2 lg:row-start-2 md:col-start-1 md:row-start-2",
+    },
+    {
+        title: "CALIDAD",
+        description:
+            "Estamos comprometidos en brindar servicios de calidad para satisfacer los requerimientos de nuestros clientes",
+        icon: calidad,
+        class: "p-5 lg:col-start-1 lg:row-start-3 md:col-start-2 md:row-start-2",
+    },
+    {
+        title: "FLEXIBILIDAD",
+        description:
+            "Trabajamos de la mano con nuestros clientes, ofreciendo soluciones que se adaptan a sus necesidades",
+        icon: flexibilidad,
+        class: "p-5 lg:col-start-3 lg:row-start-3 md:col-start-1 md:row-start-3",
+    },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -314,97 +357,25 @@ const Brands: { name: string }[] = [
         <div
             class="mx-auto max-w-7xl grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 w-full"
         >
-            <Card
-                class="p-5 lg:col-start-1 lg:row-start-1 md:col-start-1 md:row-start-1"
-            >
-                <h3 class="text-lg text-center font-medium leading-6">
-                    EXPERIENCIA
-                </h3>
-                <p class="mt-2 text-muted-foreground">
-                    Contamos con más 35 años en el mercado de la seguridad
-                    electrónica, con personal certificado en las diferentes
-                    marcas de equipo que ofrecemos
-                </p>
-                <Image
-                    alt={"experience"}
-                    src={experiencia}
-                    width={70}
-                    height={70}
-                    class={"logos-primary mx-auto mt-4"}
-                />
-            </Card>
-            <Card
-                class="p-5 lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1"
-            >
-                <h3 class="text-lg text-center font-medium leading-6">
-                    CONFIANZA
-                </h3>
-                <p class="mt-2 text-muted-foreground">
-                    Todos los servicios son atendidos por personal propio de la
-                    empresa
-                </p>
-                <Image
-                    alt={"experience"}
-                    src={confianza}
-                    width={70}
-                    height={70}
-                    class={"logos-primary mx-auto mt-4"}
-                />
-            </Card>
-            <Card
-                class="p-5 lg:col-start-2 lg:row-start-2 md:col-start-1 md:row-start-2"
-            >
-                <h3 class="text-lg text-center font-medium leading-6">
-                    COBERTURA
-                </h3>
-                <p class="mt-2 text-muted-foreground">
-                    Servicio a nivel nacional, brindamos atención en donde nos
-                    necesitan nuestros clientes
-                </p>
-                <Image
-                    alt={"experience"}
-                    src={cobertura}
-                    width={70}
-                    height={70}
-                    class={"logos-primary mx-auto mt-4"}
-                />
-            </Card>
-            <Card
-                class="p-5 lg:col-start-1 lg:row-start-3 md:col-start-2 md:row-start-2"
-            >
-                <h3 class="text-lg text-center font-medium leading-6">
-                    CALIDAD
-                </h3>
-                <p class="mt-2 text-muted-foreground">
-                    Estamos comprometidos en brindar servicios de calidad para
-                    satisfacer los requerimientos de nuestros clientes
-                </p>
-                <Image
-                    alt={"experience"}
-                    src={calidad}
-                    width={70}
-                    height={70}
-                    class={"logos-primary mx-auto mt-4"}
-                />
-            </Card>
-            <Card
-                class="p-5 lg:col-start-3 lg:row-start-3 md:col-start-1 md:row-start-3"
-            >
-                <h3 class="text-lg text-center font-medium leading-6">
-                    FLEXIBILIDAD
-                </h3>
-                <p class="mt-2 text-muted-foreground">
-                    Trabajamos de la mano con nuestros clientes, ofreciendo
-                    soluciones que se adaptan a sus necesidades
-                </p>
-                <Image
-                    alt={"experience"}
-                    src={flexibilidad}
-                    width={70}
-                    height={70}
-                    class={"logos-primary mx-auto mt-4"}
-                />
-            </Card>
+            {
+                Checks.map((Check) => (
+                    <Card class={Check.class}>
+                        <h3 class="text-lg text-center font-medium leading-6">
+                            {Check.title}
+                        </h3>
+                        <p class="mt-2 text-muted-foreground">
+                            {Check.description}
+                        </p>
+                        <Image
+                            alt={`${Check.icon}`}
+                            src={Check.icon}
+                            width={70}
+                            height={70}
+                            class={"logos-primary mx-auto mt-4"}
+                        />
+                    </Card>
+                ))
+            }
         </div>
     </div>
     <div class={`mt-16 p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
