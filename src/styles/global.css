@@ -20,7 +20,7 @@
   --muted: #d6d6d6;
   --muted-foreground: #52525b;
   --card: #ffffff;
-  --btncard:#9f0712 ;
+  --btncard: #9f0712;
 }
 
 :root[data-theme="dark"] {
@@ -31,7 +31,7 @@
   --muted: #171717;
   --muted-foreground: #a1a1aa;
   --card: #52525b;
-  --btncard:oklch(62.803% 0.25754 29.002);
+  --btncard: oklch(62.803% 0.25754 29.002);
 
   .logos {
     filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
@@ -64,4 +64,14 @@
 .reveal.active {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
