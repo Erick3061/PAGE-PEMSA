@@ -2,6 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import banner from "../assets/banner.webp";
 import social from "../assets/social.webp";
+import experiencia from "../assets/check/experiencia.png";
+import cobertura from "../assets/check/cobertura.png";
+import confianza from "../assets/check/confianza.png";
+import flexibilidad from "../assets/check/flexibilidad.png";
+import calidad from "../assets/check/calidad.png";
 import Button from "../components/ui/Button.astro";
 import { siteConfig } from "../config/site";
 import Features from "../components/widgets/Features.astro";
@@ -320,6 +325,13 @@ const Brands: { name: string }[] = [
                     electrónica, con personal certificado en las diferentes
                     marcas de equipo que ofrecemos
                 </p>
+                <Image
+                    alt={"experience"}
+                    src={experiencia}
+                    width={70}
+                    height={70}
+                    class={"logos-primary mx-auto mt-4"}
+                />
             </Card>
             <Card
                 class="p-5 lg:col-start-3 lg:row-start-1 md:col-start-2 md:row-start-1"
@@ -331,6 +343,13 @@ const Brands: { name: string }[] = [
                     Todos los servicios son atendidos por personal propio de la
                     empresa
                 </p>
+                <Image
+                    alt={"experience"}
+                    src={confianza}
+                    width={70}
+                    height={70}
+                    class={"logos-primary mx-auto mt-4"}
+                />
             </Card>
             <Card
                 class="p-5 lg:col-start-2 lg:row-start-2 md:col-start-1 md:row-start-2"
@@ -342,6 +361,13 @@ const Brands: { name: string }[] = [
                     Servicio a nivel nacional, brindamos atención en donde nos
                     necesitan nuestros clientes
                 </p>
+                <Image
+                    alt={"experience"}
+                    src={cobertura}
+                    width={70}
+                    height={70}
+                    class={"logos-primary mx-auto mt-4"}
+                />
             </Card>
             <Card
                 class="p-5 lg:col-start-1 lg:row-start-3 md:col-start-2 md:row-start-2"
@@ -353,6 +379,13 @@ const Brands: { name: string }[] = [
                     Estamos comprometidos en brindar servicios de calidad para
                     satisfacer los requerimientos de nuestros clientes
                 </p>
+                <Image
+                    alt={"experience"}
+                    src={calidad}
+                    width={70}
+                    height={70}
+                    class={"logos-primary mx-auto mt-4"}
+                />
             </Card>
             <Card
                 class="p-5 lg:col-start-3 lg:row-start-3 md:col-start-1 md:row-start-3"
@@ -364,6 +397,13 @@ const Brands: { name: string }[] = [
                     Trabajamos de la mano con nuestros clientes, ofreciendo
                     soluciones que se adaptan a sus necesidades
                 </p>
+                <Image
+                    alt={"experience"}
+                    src={flexibilidad}
+                    width={70}
+                    height={70}
+                    class={"logos-primary mx-auto mt-4"}
+                />
             </Card>
         </div>
     </div>

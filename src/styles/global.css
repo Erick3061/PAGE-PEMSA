@@ -21,6 +21,10 @@
   --muted-foreground: #52525b;
   --card: #ffffff;
   --btncard: #9f0712;
+
+  .logos-primary {
+    filter: brightness(0) saturate(100%) invert(5%) sepia(85%) saturate(6298%) hue-rotate(244deg) brightness(115%) contrast(98%);
+  }
 }
 
 :root[data-theme="dark"] {
@@ -34,6 +38,10 @@
   --btncard: oklch(62.803% 0.25754 29.002);
 
   .logos {
+    filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
+  }
+
+  .logos-primary {
     filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
   }
 }
