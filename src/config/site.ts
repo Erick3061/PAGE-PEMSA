@@ -19,9 +19,9 @@ export const siteConfig = {
     { text: "Inicio", href: "/" },
     {
       text: "Nosotros", href: "/about", navs: [
-        { text: "Historia", href: "/about/history" },
-        { text: "Certificados", href: "/about/certs" },
-        { text: "Permisos", href: "/about/permits" },
+        // { text: "Historia", href: "/about/history" },
+        // { text: "Certificados", href: "/about/certs" },
+        // { text: "Permisos", href: "/about/permits" },
       ]
     },
     { text: "Servicios", href: "/services" },

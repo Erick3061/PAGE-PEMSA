@@ -33,7 +33,7 @@ import Card from "./ui/Card.astro";
             <div class="ml-10 flex items-baseline space-x-8">
                 {
                     siteConfig.navLinks.map((link) =>
-                        link.isShow === false ? null : link.navs ? (
+                        link.isShow === false ? null : link.navs?.length ? (
                             <div />
                         ) : (
                             <a

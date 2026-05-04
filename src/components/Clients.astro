@@ -1,13 +1,34 @@
 ---
 import Headline from "./ui/Headline.astro";
+import compartamos from "../assets/clients/compartamos.webp";
+import dico from "../assets/clients/dico.webp";
+import fotl from "../assets/clients/fotl.webp";
+import gentera from "../assets/clients/gentera.webp";
+import intermex from "../assets/clients/intermex.webp";
+import mazda from "../assets/clients/mazda.webp";
+import profuturo from "../assets/clients/profuturo.webp";
+import optima from "../assets/clients/optima.webp";
+import gandhi from "../assets/clients/gandhi.webp";
+import telmex from "../assets/clients/telmex.webp";
+import acciona from "../assets/clients/acciona.webp";
+import cdll from "../assets/clients/cdll.webp";
+import cibanco from "../assets/clients/cibanco.webp";
+import { Image } from "astro:assets";
 
-const data: { name: string }[] = [
-    { name: "Acciona" },
-    { name: "Encinos" },
-    { name: "Dico" },
-    { name: "Compartamos" },
-    { name: "Telmex" },
-    { name: "gandhi" },
+const data: { name: string; icon?: ImageMetadata }[] = [
+    { name: "Compartamos", icon: compartamos },
+    { name: "Dico", icon: dico },
+    { name: "frut of the loom", icon: fotl },
+    { name: "Gandhi", icon: gandhi },
+    { name: "Gentera", icon: gentera },
+    { name: "Intermex", icon: intermex },
+    { name: "Mazda", icon: mazda },
+    { name: "Optima", icon: optima },
+    { name: "Profuturo", icon: profuturo },
+    { name: "Telmex", icon: telmex },
+    { name: "Acciona", icon: acciona },
+    { name: "Casa de las lomas", icon: cdll },
+    { name: "Ci Banco", icon: cibanco },
 ];
 ---
 
@@ -29,18 +50,36 @@ const data: { name: string }[] = [
                 <div class="flex items-center justify-around gap-16 px-8">
                     {
                         data.map((client, idx) => (
-                            <span class="text-3xl font-bold text-gray-300">
-                                {client.name.toUpperCase()}
-                            </span>
+                            <div class="w-50 h-50 flex flex-col items-center justify-center">
+                                {client.icon && (
+                                    <Image
+                                        alt={`${client.icon}`}
+                                        src={client.icon}
+                                        class={"mx-auto"}
+                                    />
+                                )}
+                                {/* <span class="text-2xl font-bold text-gray-300">
+                                    {client.name}
+                                </span> */}
+                            </div>
                         ))
                     }
                 </div>
                 <div class="flex items-center justify-around gap-16 px-8">
                     {
                         data.map((client, idx) => (
-                            <span class="text-3xl font-bold text-gray-300">
-                                {client.name.toUpperCase()}
-                            </span>
+                            <div class="w-50 h-50 flex flex-col items-center justify-center">
+                                {client.icon && (
+                                    <Image
+                                        alt={`${client.icon}`}
+                                        src={client.icon}
+                                        class={"mx-auto"}
+                                    />
+                                )}
+                                {/* <span class="text-2xl font-bold text-gray-300">
+                                    {client.name}
+                                </span> */}
+                            </div>
                         ))
                     }
                 </div>
