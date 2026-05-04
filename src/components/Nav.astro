@@ -34,34 +34,7 @@ import Card from "./ui/Card.astro";
                 {
                     siteConfig.navLinks.map((link) =>
                         link.isShow === false ? null : link.navs ? (
-                            <div class="relative group">
-                                {/* <a
-                                    href={link.href}
-                                    class="text-sm font-medium text-foreground transition-colors hover:text-primary"
-                                >
-                                    {link.text}
-                                </a>
-                                */}
-                                <div class="flex items-center gap-1 cursor-pointer">
-                                    <p class="text-sm font-semibold text-foreground transition-colors hover:text-primary">
-                                        {link.text}
-                                    </p>
-                                    <Icon
-                                        name={"lucide:chevron-down"}
-                                        class="w-5 h-5 group-hover:rotate-180 transition-transform"
-                                    />
-                                </div>
-                                <div v-if={true} class="absolute">
-                                    {link.navs.map((subLink) => (
-                                        <a
-                                            href={subLink.href}
-                                            class="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary"
-                                        >
-                                            {subLink.text}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
+                            <div />
                         ) : (
                             <a
                                 href={link.href}
@@ -166,14 +139,6 @@ import Card from "./ui/Card.astro";
     const menu = document.getElementById("mobile-menu");
     const iconClosed = document.getElementById("menu-icon-closed");
     const iconOpen = document.getElementById("menu-icon-open");
-
-    export default {
-        data() {
-            return {
-                isOpen: false,
-            };
-        },
-    };
 
     button?.addEventListener("click", () => {
         const isExpanded = button.getAttribute("aria-expanded") === "true";
