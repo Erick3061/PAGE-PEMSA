@@ -1,0 +1,132 @@
+---
+import duns from "../assets/refs/duns.webp";
+import achilles from "../assets/refs/achilles.webp";
+import iso from "../assets/refs/iso.webp";
+import Headline from "./ui/Headline.astro";
+import Card from "./ui/Card.astro";
+import { Image } from "astro:assets";
+
+const data: {
+    description: string;
+    list: { text: string; class?: string; isURL?: boolean }[];
+    icon?: ImageMetadata;
+    action?: { text: string; href: string; target?: string };
+}[] = [
+    {
+        description:
+            "PEMSA está certificado en el sistema de gestión de calidad de la norma ISO 9001:2015/NMX-CC-9001-IMNC-2015",
+        list: [
+            {
+                text: "Certificado No. SG 20211485",
+            },
+        ],
+        icon: iso,
+        action: {
+            text: "Ver certificado",
+            href: "https://www.pemsa.com.mx/certificado-iso-9001-2015.pdf",
+        },
+    },
+    {
+        description:
+            "PEMSA es un proveedor certificado por Achilles, lo cual garantiza que contamos con estándares de calidad para brindar nuestros servicios",
+        list: [
+            {
+                text: "No. RePro: 329,814",
+            },
+        ],
+        icon: achilles,
+        action: {
+            text: "Ver certificado",
+            href: "https://www.pemsa.com.mx/certificado-achilles.pdf",
+        },
+    },
+    {
+        description:
+            "PEMSA cuenta con un número de identificador fiscal a nivel internacional DUNS, emitido por Dun & Bradstreet (D&B), lo cual valida la confiabilidad, legalidad y solvencia de la empresa",
+        list: [
+            {
+                text: "No. : 81-253-3628",
+            },
+        ],
+        icon: duns,
+        action: {
+            text: "Ver información",
+            href: "https://www.cialdnb.com/es/empresas/?id=5d49e57dc34abcce3fa2c161",
+            target: "_blank",
+        },
+    },
+    {
+        description:
+            "PEMSA cuenta con el permiso Federal y del Estado de Puebla para brindar servicios de Seguridad Privada con sistemas electrónicos",
+        list: [
+            {
+                text: "PERMISO SSP FEDERAL: DGSP/303-16/3302",
+            },
+            {
+                text: "PERMISO SSP EDO. DE PUEBLA: SSP/SUBCOP/DGSP/114-15/109",
+            },
+        ],
+        action: {
+            text: "Ver permisos",
+            href: "https://www.pemsa.com.mx/permisos.html",
+        },
+    },
+];
+---
+
+<div class={`reveal mt-16 p-5 flex flex-col md:gap-16`}>
+    <Headline
+        title="CERTIFICACIONES Y PERMISOS"
+        classes={{
+            container: "max-w-3xl mx-auto text-center",
+        }}
+    />
+    <div
+        class="mx-auto max-w-7xl grid gap-4 md:grid-cols-2 lg:grid-cols-3 w-full"
+    >
+        {
+            data.map((data, idx) => (
+                <Card class="flex flex-col justify-between">
+                    <p class="text-muted-foreground font-semibold">
+                        {data.description}
+                    </p>
+                    {data.list.map((item) =>
+                        item.isURL ? (
+                            <a
+                                href={item.text}
+                                class={`mt-2 ${item.class ? item.class : ""}`}
+                            >
+                                {item.text}
+                            </a>
+                        ) : (
+                            <li
+                                class={`mt-2 text-muted-foreground font-semibold ${item.class ? item.class : ""}`}
+                            >
+                                {item.text}
+                            </li>
+                        ),
+                    )}
+                    {data.icon && (
+                        <Image
+                            alt={`${data.icon}`}
+                            src={data.icon}
+                            width={100}
+                            height={100}
+                            class={"mx-auto mt-10"}
+                        />
+                    )}
+                    {data.action && (
+                        <a
+                            href={data.action.href}
+                            class="text-(--btncard) mt-8 font-bold flex items-center gap-2 group/btn hover:underline transition-all"
+                            aria-label={data.action.text}
+                            target={data.action.target || "_self"}
+                        >
+                            {data.action.text}
+                        </a>
+                    )}
+                </Card>
+            ))
+        }
+    </div>
+</div>

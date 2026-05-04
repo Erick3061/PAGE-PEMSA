@@ -3,6 +3,8 @@ import { siteConfig } from "../config/site";
 import ThemeToggle from "../components/ui/ThemeToggle.astro";
 import logo from "../assets/images/pem-logo.webp";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Card from "./ui/Card.astro";
 ---
 
 <nav
@@ -30,16 +32,44 @@ import { Image } from "astro:assets";
         <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-8">
                 {
-                    siteConfig.navLinks.map(
-                        (link) =>
-                            link.text !== "legal" && (
-                                <a
+                    siteConfig.navLinks.map((link) =>
+                        link.isShow === false ? null : link.navs ? (
+                            <div class="relative group">
+                                {/* <a
                                     href={link.href}
                                     class="text-sm font-medium text-foreground transition-colors hover:text-primary"
                                 >
                                     {link.text}
                                 </a>
-                            ),
+                                */}
+                                <div class="flex items-center gap-1 cursor-pointer">
+                                    <p class="text-sm font-semibold text-foreground transition-colors hover:text-primary">
+                                        {link.text}
+                                    </p>
+                                    <Icon
+                                        name={"lucide:chevron-down"}
+                                        class="w-5 h-5 group-hover:rotate-180 transition-transform"
+                                    />
+                                </div>
+                                <div v-if={true} class="absolute">
+                                    {link.navs.map((subLink) => (
+                                        <a
+                                            href={subLink.href}
+                                            class="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary"
+                                        >
+                                            {subLink.text}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <a
+                                href={link.href}
+                                class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                            >
+                                {link.text}
+                            </a>
+                        ),
                     )
                 }
             </div>
@@ -136,6 +166,14 @@ import { Image } from "astro:assets";
     const menu = document.getElementById("mobile-menu");
     const iconClosed = document.getElementById("menu-icon-closed");
     const iconOpen = document.getElementById("menu-icon-open");
+
+    export default {
+        data() {
+            return {
+                isOpen: false,
+            };
+        },
+    };
 
     button?.addEventListener("click", () => {
         const isExpanded = button.getAttribute("aria-expanded") === "true";

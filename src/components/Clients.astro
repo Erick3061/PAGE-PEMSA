@@ -1,0 +1,50 @@
+---
+import Headline from "./ui/Headline.astro";
+
+const data: { name: string }[] = [
+    { name: "Acciona" },
+    { name: "Encinos" },
+    { name: "Dico" },
+    { name: "Compartamos" },
+    { name: "Telmex" },
+    { name: "gandhi" },
+];
+---
+
+<div class={`reveal mt-16 p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
+    <Headline
+        title="CLIENTES"
+        subtitle="Algunos de nuestros clientes satisfechos"
+        classes={{
+            container: "max-w-3xl mx-auto text-center",
+        }}
+    />
+    <div class="container mx-auto">
+        <div
+            class="relative flex overflow-x-hidden border-b border-t border-transparent py-10"
+        >
+            <div
+                class="flex animate-[marquee_30s_linear_infinite] whitespace-nowrap"
+            >
+                <div class="flex items-center justify-around gap-16 px-8">
+                    {
+                        data.map((client, idx) => (
+                            <span class="text-3xl font-bold text-gray-300">
+                                {client.name.toUpperCase()}
+                            </span>
+                        ))
+                    }
+                </div>
+                <div class="flex items-center justify-around gap-16 px-8">
+                    {
+                        data.map((client, idx) => (
+                            <span class="text-3xl font-bold text-gray-300">
+                                {client.name.toUpperCase()}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+---
+import Headline from "./ui/Headline.astro";
+
+const data: { name: string }[] = [
+    { name: "Apple" },
+    { name: "Google" },
+    { name: "Disney" },
+    { name: "Amazon" },
+    { name: "Samsung" },
+    { name: "Sony" },
+];
+---
+
+<div class={`reveal p-5 mx-auto max-w-7xl flex flex-col md:gap-16`}>
+    <Headline
+        title="MARCAS"
+        subtitle="Marcas que confían en nuestro trabajo"
+        classes={{
+            container: "max-w-3xl mx-auto text-center",
+        }}
+    />
+    <div class="container mx-auto">
+        <div
+            class="relative flex overflow-x-hidden border-b border-t border-transparent py-10"
+        >
+            <div
+                class="flex animate-[marquee_30s_linear_infinite] whitespace-nowrap"
+            >
+                <div class="flex items-center justify-around gap-16 px-8">
+                    {
+                        data.map((brand, idx) => (
+                            <span class="text-3xl font-bold text-gray-300">
+                                {brand.name.toUpperCase()}
+                            </span>
+                        ))
+                    }
+                </div>
+                <div class="flex items-center justify-around gap-16 px-8">
+                    {
+                        data.map((brand, idx) => (
+                            <span class="text-3xl font-bold text-gray-300">
+                                {brand.name.toUpperCase()}
+                            </span>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

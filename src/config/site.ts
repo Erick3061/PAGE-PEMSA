@@ -17,10 +17,15 @@ export const siteConfig = {
   },
   navLinks: [
     { text: "Inicio", href: "/" },
-    { text: "Nosotros", href: "/about" },
+    {
+      text: "Nosotros", href: "/about", navs: [
+        { text: "Historia", href: "/about/history" },
+        { text: "Certificados", href: "/about/certs" },
+        { text: "Permisos", href: "/about/permits" },
+      ]
+    },
     { text: "Servicios", href: "/services" },
-    { text: "Blog", href: "/blog" },
     { text: "Contacto", href: "/contact" },
-    { text: "legal", href: "/legal" },
+    { text: "legal", href: "/legal", isShow: false },
   ],
 };
