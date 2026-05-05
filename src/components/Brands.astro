@@ -1,13 +1,83 @@
 ---
+import { Image } from "astro:assets";
+import accesspro from "../assets/brands/accesspro.webp";
+import aiphone from "../assets/brands/aiphone.webp";
+import argusa from "../assets/brands/argusa.webp";
+import avigilon from "../assets/brands/avigilon.webp";
+import axis from "../assets/brands/axis.webp";
+import bosch from "../assets/brands/bosch.webp";
+import came from "../assets/brands/came.webp";
+import cdvi from "../assets/brands/cdvi.webp";
+import dahua from "../assets/brands/dahua.webp";
+import datalogic from "../assets/brands/datalogic.webp";
+import desico from "../assets/brands/desico.webp";
+import dmp from "../assets/brands/dmp.webp";
+import dorlet from "../assets/brands/dorlet.webp";
+import dsc from "../assets/brands/dsc.webp";
+import edwards from "../assets/brands/edwards.webp";
+import ezviz from "../assets/brands/ezviz.webp";
+import ff from "../assets/brands/ff.webp";
+import flir from "../assets/brands/flir.webp";
+import genetec from "../assets/brands/genetec.webp";
+import geutebruck from "../assets/brands/geutebruck.webp";
+import hanwha from "../assets/brands/hanwha.webp";
+import hid from "../assets/brands/hid.webp";
 import Headline from "./ui/Headline.astro";
+import Card from "./ui/Card.astro";
 
-const data: { name: string }[] = [
-    { name: "Apple" },
-    { name: "Google" },
-    { name: "Disney" },
-    { name: "Amazon" },
-    { name: "Samsung" },
-    { name: "Sony" },
+const data: { name: string; icon?: ImageMetadata }[] = [
+    { name: "AccessPRO", icon: accesspro },
+    { name: "Aiphone", icon: aiphone },
+    { name: "Argusa", icon: argusa },
+    { name: "Avigilon+", icon: avigilon },
+    { name: "Axis", icon: axis },
+    { name: "Bosch", icon: bosch },
+    { name: "Came", icon: came },
+    { name: "CDVI", icon: cdvi },
+    { name: "Dahua", icon: dahua },
+    { name: "Datalogic", icon: datalogic },
+    { name: "Desico", icon: desico },
+    { name: "DMP", icon: dmp },
+    { name: "Dorlet", icon: dorlet },
+    { name: "DSC", icon: dsc },
+    { name: "EDWARDS", icon: edwards },
+    { name: "EZVIZ", icon: ezviz },
+    { name: "FF", icon: ff },
+    { name: "FLIR", icon: flir },
+    { name: "Genetec", icon: genetec },
+    { name: "Geutebruck", icon: geutebruck },
+    { name: "Hanwha", icon: hanwha },
+    { name: "HID", icon: hid },
+    // { name: "Hikvision", icon: hikvision },
+    // { name: "Hochiki", icon: hochiki },
+    // { name: "Honeywell", icon: honeywell },
+    // { name: "IEI", icon: iei },
+    // { name: "ISS", icon: iss },
+    // { name: "Jablotron", icon: jablotron },
+    // { name: "Kocom", icon: kocom },
+    // { name: "March", icon: march },
+    // { name: "Milestone", icon: milestone },
+    // { name: "Notifier", icon: notifier },
+    // { name: "Optex", icon: optex },
+    // { name: "Pacom", icon: pacom },
+    // { name: "Power Series Neo", icon: neo },
+    // { name: "Protect", icon: protect },
+    // { name: "Quolsys", icon: quolsys },
+    // { name: "Rosslare", icon: rosslare },
+    // { name: "Scati", icon: scati },
+    // { name: "Seco-laram", icon: sl },
+    // { name: "Sfire", icon: sfire },
+    // { name: "Siera", icon: siera },
+    // { name: "Syscom", icon: syscom },
+    // { name: "System Sensor", icon: ss },
+    // { name: "Suprema", icon: suprema },
+    // { name: "Tp-Link", icon: tpLink },
+    // { name: "Ubiquiti", icon: ubiquiti },
+    // { name: "Vivotek", icon: vivotek },
+    // { name: "Wejoin", icon: wejoin },
+    // { name: "Wizmart", icon: wizmart },
+    // { name: "Yonusa", icon: yonusa },
+    // { name: "ZkTeko", icon: zkteko },
 ];
 ---
 
@@ -21,26 +91,44 @@ const data: { name: string }[] = [
     />
     <div class="container mx-auto">
         <div
-            class="relative flex overflow-x-hidden border-b border-t border-transparent py-10"
+            class="relative flex overflow-x-hidden border-b border-t border-transparent"
         >
             <div
-                class="flex animate-[marquee_30s_linear_infinite] whitespace-nowrap"
+                class="flex animate-[marquee_60s_linear_infinite] whitespace-nowrap"
             >
                 <div class="flex items-center justify-around gap-16 px-8">
                     {
-                        data.map((brand, idx) => (
-                            <span class="text-3xl font-bold text-gray-300">
-                                {brand.name.toUpperCase()}
-                            </span>
+                        data.map((client, idx) => (
+                            <div class="p-0 m-0 w-50 h-50 flex flex-col items-center justify-center">
+                                {client.icon && (
+                                    <Image
+                                        alt={`${client.icon}`}
+                                        src={client.icon}
+                                        class={"img"}
+                                    />
+                                )}
+                                {/* <span class="text-2xl font-bold text-gray-300">
+                                    {client.name}
+                                </span> */}
+                            </div>
                         ))
                     }
                 </div>
                 <div class="flex items-center justify-around gap-16 px-8">
                     {
-                        data.map((brand, idx) => (
-                            <span class="text-3xl font-bold text-gray-300">
-                                {brand.name.toUpperCase()}
-                            </span>
+                        data.map((client, idx) => (
+                            <div class="p-0 m-0 w-50 h-50 flex flex-col items-center justify-center">
+                                {client.icon && (
+                                    <Image
+                                        alt={`${client.icon}`}
+                                        src={client.icon}
+                                        class={"img"}
+                                    />
+                                )}
+                                {/* <span class="text-2xl font-bold text-gray-300">
+                                    {client.name}
+                                </span> */}
+                            </div>
                         ))
                     }
                 </div>

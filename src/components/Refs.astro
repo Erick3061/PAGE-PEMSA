@@ -2,12 +2,14 @@
 import duns from "../assets/refs/duns.webp";
 import achilles from "../assets/refs/achilles.webp";
 import iso from "../assets/refs/iso.webp";
+// import alas from "../assets/refs/alas.webp";
 import Headline from "./ui/Headline.astro";
 import Card from "./ui/Card.astro";
 import { Image } from "astro:assets";
 
 const data: {
     description: string;
+    title?: string;
     list: { text: string; class?: string; isURL?: boolean }[];
     icon?: ImageMetadata;
     action?: { text: string; href: string; target?: string };
@@ -71,6 +73,39 @@ const data: {
             href: "/about/permits",
         },
     },
+    {
+        title: "Miembros de ALAS",
+        description:
+            "Comprometidos con una sociología crítica que transforma nuestra realidad latinoamericana.",
+        list: [
+            {
+                text: "La sociología latinoamericana debe ser crítica y comprometida con la transformación social.",
+                class: "italic",
+            },
+        ],
+    },
+    {
+        title: "Acreditación REPSE 2021",
+        description:
+            "Acreditamos los servicios que son realmente especializados y cumplimos con obligaciones fiscales y de seguridad social.",
+        list: [
+            {
+                text: "Regular y transparentar la contratación de servicios especializados.",
+                class: "italic",
+            },
+        ],
+    },
+    {
+        title: "Miembros de COPARMEX",
+        description:
+            "Comprometidos con la promoción de un entorno empresarial ético y responsable.",
+        list: [
+            {
+                text: "Pertenecer a esta comunidad significa compartir valores, crecer juntos y transformar nuestra realidad con compromiso y esperanza.",
+                class: "italic",
+            },
+        ],
+    },
 ];
 ---
 
@@ -87,6 +122,9 @@ const data: {
         {
             data.map((data, idx) => (
                 <Card class="flex flex-col justify-between">
+                    {data.title && (
+                        <h3 class="text-xl font-semibold py-5">{data.title}</h3>
+                    )}
                     <p class="text-muted-foreground font-semibold">
                         {data.description}
                     </p>

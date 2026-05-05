@@ -42,10 +42,10 @@ const data: { name: string; icon?: ImageMetadata }[] = [
     />
     <div class="container mx-auto">
         <div
-            class="relative flex overflow-x-hidden border-b border-t border-transparent py-10"
+            class="relative flex overflow-x-hidden border-b border-t border-transparent"
         >
             <div
-                class="flex animate-[marquee_30s_linear_infinite] whitespace-nowrap"
+                class="flex animate-[marquee_65s_linear_infinite] whitespace-nowrap"
             >
                 <div class="flex items-center justify-around gap-16 px-8">
                     {
@@ -55,7 +55,7 @@ const data: { name: string; icon?: ImageMetadata }[] = [
                                     <Image
                                         alt={`${client.icon}`}
                                         src={client.icon}
-                                        class={"mx-auto"}
+                                        class={"img"}
                                     />
                                 )}
                                 {/* <span class="text-2xl font-bold text-gray-300">
@@ -73,7 +73,7 @@ const data: { name: string; icon?: ImageMetadata }[] = [
                                     <Image
                                         alt={`${client.icon}`}
                                         src={client.icon}
-                                        class={"mx-auto"}
+                                        class={"img"}
                                     />
                                 )}
                                 {/* <span class="text-2xl font-bold text-gray-300">

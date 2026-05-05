@@ -34,8 +34,12 @@
   --border: #262626;
   --muted: #171717;
   --muted-foreground: #a1a1aa;
-  --card: #52525b;
+  --card: #38486b;
   --btncard: oklch(87.562% 0.06646 16.122);
+
+  .img {
+    filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
+  }
 
   .logos {
     filter: invert(1) sepia(1) grayscale(1) brightness(0.8);
