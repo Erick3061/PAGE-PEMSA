@@ -1,5 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import ccalidad from "../../../assets/images/ccalidad.webp";
+import cachilles from "../../../assets/images/cachilles.webp";
+import Headline from "../../../components/ui/Headline.astro";
 import Layout from "../../../layouts/Layout.astro";
+import Card from "../../../components/ui/Card.astro";
 
 const metadata = {
     title: "Certificados",
@@ -9,5 +14,28 @@ const metadata = {
 ---
 
 <Layout {metadata}>
-    <p>certificados</p>
+    <div class={`reveal mt-16`}>
+        <Headline
+            title="Nuestros certificados"
+            classes={{
+                container: "max-w-3xl mx-auto text-center",
+            }}
+        />
+        <div class="mx-auto max-w-7xl grid gap-4 md:grid-cols-2 w-full">
+            <Card>
+                <Image
+                    alt={`ccalidad`}
+                    src={ccalidad}
+                    class={"mx-auto rounded-2xl"}
+                />
+            </Card>
+            <Card>
+                <Image
+                    alt={`cachilles`}
+                    src={cachilles}
+                    class={"mx-auto rounded-2xl"}
+                />
+            </Card>
+        </div>
+    </div>
 </Layout>

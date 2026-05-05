@@ -1,5 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import pestatal from "../../../assets/images/pestatal.webp";
+import pfederal from "../../../assets/images/pfederal.webp";
+import Headline from "../../../components/ui/Headline.astro";
 import Layout from "../../../layouts/Layout.astro";
+import Card from "../../../components/ui/Card.astro";
 
 const metadata = {
     title: "Certificados",
@@ -9,5 +14,34 @@ const metadata = {
 ---
 
 <Layout {metadata}>
-    <p>Permisos</p>
+    <div class={`reveal mt-16`}>
+        <Headline
+            title="Nuestros certificados"
+            classes={{
+                container: "max-w-3xl mx-auto text-center",
+            }}
+        />
+        <div class="mx-auto max-w-7xl grid gap-4 md:grid-cols-2 w-full">
+            <Card>
+                <Image
+                    alt={`pestatal`}
+                    src={pestatal}
+                    class={"mx-auto rounded-2xl"}
+                />
+                <p class="font-semibold pt-5 text-center">
+                    PERMISO SSP EDO. DE PUEBLA: SSP/SUBCOP/DGSP/114-15/109
+                </p>
+            </Card>
+            <Card class="h-min my-auto">
+                <Image
+                    alt={`pfederal`}
+                    src={pfederal}
+                    class={"mx-auto rounded-2xl"}
+                />
+                <p class="font-semibold pt-5 text-center">
+                    PERMISO SSP FEDERAL: DGSP/303-16/3302
+                </p>
+            </Card>
+        </div>
+    </div>
 </Layout>
