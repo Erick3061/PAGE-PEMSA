@@ -1,15 +1,7 @@
 ---
 import Button from "./Button.astro";
-
-interface Props {
-  action?: string;
-  method?: "GET" | "POST";
-}
-
-const { action = "#", method = "POST" } = Astro.props;
 ---
-
-<form action={action} method={method} class="space-y-6">
+<form id="contact-form" method="post" action={""} class="space-y-6">
   <div>
     <label for="name" class="block text-sm font-medium text-foreground/80 mb-2"
       >Nombre</label
@@ -55,3 +47,32 @@ const { action = "#", method = "POST" } = Astro.props;
     <Button type="submit" size="lg" class="w-full sm:w-auto"> Enviar </Button>
   </div>
 </form>
+
+<script>
+  import { API } from "astro:env/client";
+  const form = document.getElementById("contact-form");
+  const loader = document.getElementById("loader");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loader?.classList.remove("hidden");
+    const formData = new FormData(form as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    await fetch(`${API}/mail/send`, {
+      method: "POST", // Método HTTP
+      headers: {
+        "Content-Type": "application/json", // Tipo de contenido
+      },
+      body: JSON.stringify(data),
+    })
+      .then(() => {
+        alert("Mensaje enviado con éxito");
+      })
+      .catch((error) => {
+        alert(`Error intente de nuevo \n ${JSON.stringify(error,null,3)}`);
+      })
+      .finally(() => {
+        loader?.classList.add("hidden");
+        form?.reset();
+      });
+  });
+</script>
