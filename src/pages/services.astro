@@ -9,9 +9,11 @@ import vya from "../assets/images/services/vya.webp";
 import pe from "../assets/images/services/pe.webp";
 import monitoreo from "../assets/images/services/monitoreo.webp";
 import type { ContentProps } from "../types/types";
+import { actions } from "astro:actions";
 
 const services: ContentProps[] = [
   {
+    tagline: "service-1",
     content: "VENTA E INSTALACIÓN",
     image: vya,
     description: [
@@ -50,8 +52,14 @@ const services: ContentProps[] = [
         icon: "lucide:cctv",
       },
     ],
+    action: 
+      {
+        text: "Ver detalles",
+        href: "#service-1"
+      },
   },
   {
+    tagline: "service-2",
     content: "CENTRAL DE MONITOREO",
     image: monitoreo,
     description: [
@@ -78,8 +86,13 @@ const services: ContentProps[] = [
         icon: "lucide:phone-call",
       },
     ],
+    action: {
+      text: "Ver detalles",
+      href: "#service-2"
+    },
   },
   {
+    tagline: "service-3",
     content: "MANTENIMIENTO",
     image: man,
     description: [
@@ -128,8 +141,13 @@ const services: ContentProps[] = [
           "Evita gastos mayores en el futuro al atender oportunamente las fallas.",
       },
     ],
+    action: {
+      text: "Ver detalles",
+      href: "#service-3"
+    },
   },
   {
+    tagline: "service-4",
     content: "INTEGRACIÓN DE SERVICIOS",
     image: is,
     description: [
@@ -163,8 +181,13 @@ const services: ContentProps[] = [
           "Integración de sistemas de telecomunicaciones para que trabajen coordinados y de forma eficiente.",
       },
     ],
+    action: {
+      text: "Ver detalles",
+      href: "#service-4"
+    }
   },
   {
+    tagline: "service-5",
     content: "PROYECTOS EMPRESARIALES",
     image: pe,
     description: [
@@ -196,8 +219,13 @@ const services: ContentProps[] = [
         title: "Integración",
         description:
           "Integración de seguridad electrónica con software centralizado para un control total.",
+        
       },
     ],
+    action: {
+      text: "Ver detalles",
+      href: "#service-5"
+    }
   },
 ];
 const metadata = {
@@ -220,6 +248,7 @@ const metadata = {
       title: a.content,
       icon: a.imageAlt,
       upperIcon: a.imageAlt,
+      action: a.action,
     }))}
     classes={{ container: "pt-0 md:pt-0 mb-16" }}
   />
@@ -230,9 +259,10 @@ const metadata = {
         items={service.items}
         image={service.image}
         imageAlt={service.content}
+        id={service.tagline}
       >
         <Fragment>
-          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2 mt-10">
             {service.content}:
           </h3>
           <p>{service.description}</p>

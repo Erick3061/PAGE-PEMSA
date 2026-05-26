@@ -67,6 +67,7 @@ export interface ContentProps extends HeadlineProps {
   isAfterContent?: boolean;
   description?: string[]; // Adding back description as string array for compatibility
   actions?: string | CallToAction[];
+  action?: CallToAction;
 }
 
 export interface ServiceListProps extends HeadlineProps {
